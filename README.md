@@ -18,12 +18,16 @@ Frontend SPA para la plataforma TasteTracker. Construida con Vue 3 + TypeScript 
 ## Requisitos previos
 
 1. Instalar Node.js versión soportada:
-  - Verifica con: `node -v`
-  - Descarga: https://nodejs.org/en
+
+- Verifica con: `node -v`
+- Descarga: https://nodejs.org/en
+
 2. Instalar pnpm global (si no lo tienes):
-  ```powershell
-  npm install -g pnpm
-  ```
+
+```powershell
+npm install -g pnpm
+```
+
 3. (Opcional) Instalar VS Code + extensiones recomendadas (ver más abajo).
 
 ## Clonar e instalar dependencias
@@ -45,19 +49,20 @@ VITE_MODE=local
 ```
 
 Notas:
+
 - Usa el prefijo `VITE_` para que Vite exponga la variable en `import.meta.env`.
 - Ajusta `VITE_API_URL` según el puerto/host de tu backend Laravel (`/api` / `/api/v1` según tu configuración).
 
 ## Scripts disponibles
 
-| Script | Propósito |
-|--------|-----------|
-| `pnpm dev` | Inicia el servidor de desarrollo Vite con HMR |
-| `pnpm build` | Build producción (`type-check` + `vite build`) |
-| `pnpm preview` | Sirve el build en modo preview |
-| `pnpm type-check` | Compila tipos con `vue-tsc` |
-| `pnpm lint` | Ejecuta ESLint (auto-fix + cache) |
-| `pnpm format` | Formatea código fuente con Prettier |
+| Script            | Propósito                                      |
+| ----------------- | ---------------------------------------------- |
+| `pnpm dev`        | Inicia el servidor de desarrollo Vite con HMR  |
+| `pnpm build`      | Build producción (`type-check` + `vite build`) |
+| `pnpm preview`    | Sirve el build en modo preview                 |
+| `pnpm type-check` | Compila tipos con `vue-tsc`                    |
+| `pnpm lint`       | Ejecuta ESLint (auto-fix + cache)              |
+| `pnpm format`     | Formatea código fuente con Prettier            |
 
 ## Flujo de desarrollo recomendado
 
@@ -103,19 +108,21 @@ src/
 
 ## Troubleshooting rápido
 
-| Problema | Causa común | Solución |
-|----------|-------------|----------|
-| 401 tras login | Token no persistido | Verificar `localStorage.auth_token` y backend Sanctum |
-| 422 en pedidos (`numero_mesa`) | Tipo incorrecto (number) | Asegurar string en formulario (ya corregido) |
-| Cambios de `.env` no aplican | Cache dev server | Reiniciar `pnpm dev` tras editar `.env` |
-| Error de tipos en `.vue` | Falta Volar | Instalar extensión oficial Vue |
+| Problema                       | Causa común              | Solución                                              |
+| ------------------------------ | ------------------------ | ----------------------------------------------------- |
+| 401 tras login                 | Token no persistido      | Verificar `localStorage.auth_token` y backend Sanctum |
+| 422 en pedidos (`numero_mesa`) | Tipo incorrecto (number) | Asegurar string en formulario (ya corregido)          |
+| Cambios de `.env` no aplican   | Cache dev server         | Reiniciar `pnpm dev` tras editar `.env`               |
+| Error de tipos en `.vue`       | Falta Volar              | Instalar extensión oficial Vue                        |
 
 ## Build y despliegue
 
 1. Ejecutar build:
-  ```powershell
-  pnpm build
-  ```
+
+```powershell
+pnpm build
+```
+
 2. Servir contenido estático (ejemplo con cualquier servidor estático o integrar en Laravel `public/` si se desea).
 3. Usar `pnpm preview` para validar antes de subir.
 
@@ -124,6 +131,7 @@ src/
 Proyecto privado (ajusta este apartado si defines una licencia abierta más adelante).
 
 ---
+
 Si necesitas añadir más pasos específicos de backend (migraciones, seeders, Sanctum config), agrégalos en una sección adicional `Backend Setup` aquí.
 
 ## Recommended IDE Setup
@@ -133,7 +141,7 @@ Si necesitas añadir más pasos específicos de backend (migraciones, seeders, S
 ## Recommended Browser Setup
 
 - Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
+  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
   - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
 - Firefox:
   - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
@@ -158,4 +166,5 @@ pnpm build
 ```
 
 ---
+
 Última actualización: 2025-11-11
