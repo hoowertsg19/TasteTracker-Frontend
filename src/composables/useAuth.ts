@@ -1,5 +1,6 @@
 import { ref, computed } from 'vue'
 import * as authService from '@/services/authService'
+import { authAPI } from '@/services/api'
 import type { LoginRequest, RegisterRequest, User } from '@/types/auth'
 
 const user = ref<User | null>(null)
@@ -12,7 +13,7 @@ async function login(credentials: LoginRequest) {
   loading.value = true
   error.value = null
   try {
-    const res = await authService.login(credentials)
+    const res = await authAPI.login(credentials)
     authService.saveToken(res.token)
     user.value = res.user
   } catch (e) {

@@ -1,6 +1,7 @@
 import httpClient from '@/services/httpClient'
 import type { AuthResponse, LoginRequest, RegisterRequest, User } from '@/types/auth'
 import axios from 'axios'
+import { authAPI } from '@/services/api'
 
 const TOKEN_KEY = 'auth_token'
 
@@ -19,8 +20,8 @@ function parseAxiosError(error: unknown): string {
 
 export async function login(credentials: LoginRequest): Promise<AuthResponse> {
   try {
-    const { data } = await httpClient.post<AuthResponse>('/v1/auth/login', credentials)
-    return data
+    const data = await authAPI.login(credentials)
+    return data as AuthResponse
   } catch (error) {
     throw new Error(parseAxiosError(error))
   }
