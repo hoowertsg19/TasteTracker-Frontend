@@ -42,7 +42,7 @@
         </div>
 
         <!-- Contenido central -->
-        <div class="mt-16 space-y-6">
+        <div class="mt-10 space-y-6">
           <div class="space-y-4">
             <h1 class="text-4xl font-extrabold tracking-tight text-white">
               Gestión inteligente de tu restaurante
@@ -313,6 +313,30 @@
                   class="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:bg-white focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 transition-all duration-300 outline-none text-base"
                 />
               </div>
+            </div>
+
+            <!-- Opciones -->
+            <div class="flex items-center justify-between pt-2 flex-wrap gap-4">
+              <label class="flex items-center gap-3 cursor-pointer group">
+                <input
+                  type="checkbox"
+                  id="remember-me"
+                  class="w-5 h-5 rounded-md border-2 border-gray-300 text-orange-500 focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-all cursor-pointer"
+                />
+                <span
+                  class="text-sm font-medium text-gray-700 group-hover:text-gray-900 transition-colors select-none"
+                >
+                  Mantener sesión iniciada
+                </span>
+              </label>
+
+              <router-link
+                to="/forgot-password"
+                class="text-sm font-bold text-orange-600 hover:text-orange-700 hover:underline transition-all whitespace-nowrap"
+                aria-label="Recuperar contraseña olvidada"
+              >
+                ¿Olvidaste tu contraseña?
+              </router-link>
             </div>
 
             <button

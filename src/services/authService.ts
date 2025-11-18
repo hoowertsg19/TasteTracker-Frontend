@@ -1,4 +1,3 @@
-import httpClient from '@/services/httpClient'
 import type { AuthResponse, LoginRequest, RegisterRequest, User } from '@/types/auth'
 import axios from 'axios'
 import { authAPI } from '@/services/api'
@@ -29,8 +28,12 @@ export async function login(credentials: LoginRequest): Promise<AuthResponse> {
 
 export async function register(userData: RegisterRequest): Promise<AuthResponse> {
   try {
-    const { data } = await httpClient.post<AuthResponse>('/v1/auth/register', userData)
-    return data
+    const data = await authAPI.register({
+      name: userData.name,
+      email: userData.email,
+      password: userData.password,
+    })
+    return data as AuthResponse
   } catch (error) {
     throw new Error(parseAxiosError(error))
   }
@@ -38,7 +41,8 @@ export async function register(userData: RegisterRequest): Promise<AuthResponse>
 
 export async function logout(): Promise<void> {
   try {
-    await httpClient.post('/v1/auth/logout')
+    // Delegar en authAPI que ya usa baseURL con /api/v1
+    await authAPI.logout()
   } catch (error) {
     throw new Error(parseAxiosError(error))
   }
@@ -46,8 +50,8 @@ export async function logout(): Promise<void> {
 
 export async function getCurrentUser(): Promise<User> {
   try {
-    const { data } = await httpClient.get<User>('/v1/auth/me')
-    return data
+    const data = await authAPI.me()
+    return data as User
   } catch (error) {
     throw new Error(parseAxiosError(error))
   }

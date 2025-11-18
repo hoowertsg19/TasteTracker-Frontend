@@ -4,9 +4,7 @@ import { useAuth } from '@/composables/useAuth'
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    name: 'home',
-    component: () => import('@/views/HomeView.vue'),
-    meta: { requiresAuth: true },
+    redirect: '/dashboard',
   },
   {
     path: '/login',
@@ -19,6 +17,18 @@ const routes: RouteRecordRaw[] = [
     name: 'register',
     component: () => import('@/views/RegisterView.vue'),
     meta: { requiresAuth: false },
+  },
+  {
+    path: '/forgot-password',
+    name: 'ForgotPassword',
+    component: () => import('@/views/ForgotPasswordView.vue'),
+    meta: { requiresAuth: false, requiresGuest: true },
+  },
+  {
+    path: '/reset-password',
+    name: 'ResetPassword',
+    component: () => import('@/views/ResetPasswordView.vue'),
+    meta: { requiresAuth: false, requiresGuest: true },
   },
   {
     path: '/dashboard',
@@ -49,6 +59,7 @@ router.beforeEach(async (to) => {
   const { isAuthenticated, checkAuth } = useAuth()
 
   const requiresAuth = to.matched.some((r) => r.meta.requiresAuth)
+  const requiresGuest = to.matched.some((r) => r.meta.requiresGuest)
 
   if (requiresAuth) {
     if (!isAuthenticated.value) {
@@ -63,7 +74,7 @@ router.beforeEach(async (to) => {
     }
   }
 
-  if ((to.path === '/login' || to.path === '/register') && isAuthenticated.value) {
+  if (requiresGuest && isAuthenticated.value) {
     return { path: '/dashboard' }
   }
 

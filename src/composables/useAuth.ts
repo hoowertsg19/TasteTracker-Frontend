@@ -14,10 +14,27 @@ async function login(credentials: LoginRequest) {
   error.value = null
   try {
     const res = await authAPI.login(credentials)
-    authService.saveToken(res.token)
-    user.value = res.user
-  } catch (e) {
-    error.value = e instanceof Error ? e.message : 'Error al iniciar sesión'
+
+    // Guardar token explícitamente en localStorage (formato { token: '...' })
+    if ((res as any).token) {
+      localStorage.setItem('token', (res as any).token)
+      authService.saveToken((res as any).token)
+    }
+    // Si tu backend usa access_token, descomenta y ajusta:
+    // if ((res as any).access_token) {
+    //   localStorage.setItem('token', (res as any).access_token)
+    //   authService.saveToken((res as any).access_token)
+    // }
+
+    user.value = (res as any).user || null
+    if ((res as any).user) {
+      localStorage.setItem('user', JSON.stringify((res as any).user))
+    }
+
+    return res
+  } catch (e: unknown) {
+    const err = e as any
+    error.value = err?.response?.data?.message || 'Credenciales incorrectas'
     throw e
   } finally {
     loading.value = false
@@ -31,6 +48,9 @@ async function register(userData: RegisterRequest) {
     const res = await authService.register(userData)
     authService.saveToken(res.token)
     user.value = res.user
+    if (res.user) {
+      localStorage.setItem('user', JSON.stringify(res.user))
+    }
   } catch (e) {
     error.value = e instanceof Error ? e.message : 'Error al registrarse'
     throw e
@@ -50,6 +70,7 @@ async function logout() {
   } finally {
     authService.removeToken()
     user.value = null
+    localStorage.removeItem('user')
     loading.value = false
   }
 }
@@ -60,11 +81,19 @@ async function checkAuth() {
   try {
     const token = authService.getToken()
     if (!token) {
-      user.value = null
+      const storedUser = localStorage.getItem('user')
+      if (storedUser) {
+        user.value = JSON.parse(storedUser) as User
+      } else {
+        user.value = null
+      }
       return
     }
     const me = await authService.getCurrentUser()
     user.value = me
+    if (me) {
+      localStorage.setItem('user', JSON.stringify(me))
+    }
   } catch (e) {
     // If token invalid or failed, ensure clean state
     authService.removeToken()

@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen flex overflow-hidden">
-    <!-- Columna izquierda - Hero (igual que LoginView) -->
+    <!-- ========== COLUMNA IZQUIERDA - HERO (COPIAR DE FORGOT PASSWORD) ========== -->
     <div class="hidden lg:flex lg:w-[45%] relative overflow-hidden">
       <div
         class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-[20s] ease-out hover:scale-110"
@@ -12,7 +12,12 @@
         <div
           class="absolute inset-0 bg-linear-to-br from-gray-900/90 via-orange-900/60 to-gray-900/85"
         ></div>
-        <div class="absolute inset-0 opacity-10"></div>
+        <div
+          class="absolute inset-0 opacity-10"
+          style="
+            background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;);
+          "
+        ></div>
       </div>
 
       <div class="relative z-10 flex flex-col justify-between h-full px-12 py-12">
@@ -29,57 +34,39 @@
           </div>
         </div>
 
-        <div class="mt-10 space-y-6">
-          <div class="space-y-4">
-            <h1 class="text-4xl font-extrabold tracking-tight text-white">
-              Gestión inteligente de tu restaurante
-            </h1>
-            <p class="text-gray-200 text-sm max-w-md">
-              Controla pedidos, mesas, menú y clientes en una sola plataforma pensada para equipos
-              que no tienen tiempo que perder.
+        <div class="space-y-8 max-w-lg">
+          <div class="space-y-6 animate-fade-in-up" style="animation-delay: 0.15s">
+            <div class="space-y-4">
+              <h1 class="text-5xl sm:text-6xl font-black text-white leading-tight tracking-tight">
+                Nueva
+                <span
+                  class="block text-transparent bg-clip-text bg-linear-to-r from-orange-300 via-orange-400 to-red-400"
+                >
+                  Contraseña
+                </span>
+              </h1>
+              <div
+                class="h-1.5 w-32 bg-linear-to-r from-orange-400 via-red-500 to-orange-400 rounded-full"
+              ></div>
+            </div>
+
+            <p class="text-xl text-gray-100 leading-relaxed font-light">
+              Crea una contraseña segura para mantener tu cuenta protegida.
             </p>
           </div>
 
-          <div class="space-y-4">
+          <div class="grid grid-cols-1 gap-3 animate-fade-in-up" style="animation-delay: 0.3s">
             <div
-              class="flex items-center gap-4 bg-white/5 backdrop-blur-sm rounded-xl p-3.5 border border-white/10 hover:bg-white/10 hover:scale-105 transition-all duration-300 group"
+              class="flex items-center gap-4 bg-white/5 backdrop-blur-sm rounded-xl p-3.5 border border-white/10"
             >
               <div
-                class="shrink-0 w-12 h-12 bg-linear-to-br from-orange-400 to-red-500 rounded-xl flex items-center justify-center text-xl shadow-xl group-hover:scale-110 transition-transform"
+                class="shrink-0 w-12 h-12 bg-linear-to-br from-orange-400 to-red-500 rounded-xl flex items-center justify-center text-xl shadow-xl"
               >
-                ⚡
+                ✅
               </div>
               <div>
-                <h3 class="text-white font-bold text-base">Gestión Rápida</h3>
-                <p class="text-gray-200 text-sm">Procesa pedidos en segundos</p>
-              </div>
-            </div>
-
-            <div
-              class="flex items-center gap-4 bg-white/5 backdrop-blur-sm rounded-xl p-3.5 border border-white/10 hover:bg-white/10 hover:scale-105 transition-all duration-300 group"
-            >
-              <div
-                class="shrink-0 w-12 h-12 bg-linear-to-br from-orange-400 to-red-500 rounded-xl flex items-center justify-center text-xl shadow-xl group-hover:scale-110 transition-transform"
-              >
-                📊
-              </div>
-              <div>
-                <h3 class="text-white font-bold text-base">Control Total</h3>
-                <p class="text-gray-200 text-sm">Menú y clientes centralizados</p>
-              </div>
-            </div>
-
-            <div
-              class="flex items-center gap-4 bg-white/5 backdrop-blur-sm rounded-xl p-3.5 border border-white/10 hover:bg-white/10 hover:scale-105 transition-all duration-300 group"
-            >
-              <div
-                class="shrink-0 w-12 h-12 bg-linear-to-br from-orange-400 to-red-500 rounded-xl flex items-center justify-center text-xl shadow-xl group-hover:scale-110 transition-transform"
-              >
-                🔒
-              </div>
-              <div>
-                <h3 class="text-white font-bold text-base">Seguridad Garantizada</h3>
-                <p class="text-gray-200 text-sm">Datos protegidos 24/7</p>
+                <h3 class="text-white font-bold text-base">Recupera el acceso</h3>
+                <p class="text-gray-200 text-sm">Completa el formulario y vuelve a entrar</p>
               </div>
             </div>
           </div>
@@ -100,12 +87,12 @@
               class="w-9 h-9 rounded-full bg-linear-to-br from-green-400 to-teal-500 border-2 border-gray-900"
             ></div>
           </div>
-          <span>Más de 500+ restaurantes confían en nosotros</span>
+          <span class="font-medium">Más de 500+ restaurantes confían en nosotros</span>
         </div>
       </div>
     </div>
 
-    <!-- Columna derecha - Registro -->
+    <!-- ========== COLUMNA DERECHA - FORMULARIO ========== -->
     <div class="w-full lg:w-[55%] flex flex-col min-h-screen bg-white">
       <div class="flex-1 flex items-center justify-center p-6 sm:p-8 lg:p-12">
         <div class="w-full max-w-xl animate-fade-in-up" style="animation-delay: 0.4s">
@@ -119,20 +106,55 @@
             </div>
           </div>
 
+          <!-- Card principal -->
           <div class="bg-white rounded-3xl p-6 sm:p-10 border-2 border-gray-100 shadow-xl">
             <!-- Header -->
-            <div class="mb-8">
+            <div class="mb-10">
               <h2
                 class="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-3 tracking-tight"
               >
-                ¡Únete a TasteTracker!
+                Nueva contraseña
               </h2>
               <p class="text-lg text-gray-600">
-                Crea tu cuenta y comienza a gestionar tu restaurante
+                Ingresa tu nueva contraseña para recuperar el acceso a tu cuenta
               </p>
             </div>
 
-            <!-- Mensajes de estado -->
+            <!-- Success message -->
+            <div
+              v-if="passwordChanged"
+              class="mb-8 p-5 bg-linear-to-r from-green-50 to-emerald-50 border-l-4 border-green-500 rounded-xl"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="shrink-0 w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold"
+                >
+                  ✓
+                </div>
+                <div class="flex-1">
+                  <p class="text-sm font-bold text-green-900 mb-1">¡Contraseña actualizada!</p>
+                  <p class="text-sm text-green-700 mb-3">
+                    Tu contraseña ha sido restablecida exitosamente.
+                  </p>
+                  <router-link
+                    to="/login"
+                    class="inline-flex items-center gap-2 text-sm font-bold text-green-700 hover:text-green-800 underline"
+                  >
+                    Ir al inicio de sesión
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      />
+                    </svg>
+                  </router-link>
+                </div>
+              </div>
+            </div>
+
+            <!-- Error banner -->
             <div
               v-if="error"
               class="mb-8 p-5 bg-linear-to-r from-red-50 to-orange-50 border-l-4 border-red-500 rounded-xl animate-shake"
@@ -144,7 +166,7 @@
                   !
                 </div>
                 <div class="flex-1">
-                  <p class="text-sm font-bold text-red-900 mb-1">Error en el registro</p>
+                  <p class="text-sm font-bold text-red-900 mb-1">Error</p>
                   <p class="text-sm text-red-700">{{ error }}</p>
                 </div>
                 <button
@@ -156,176 +178,15 @@
               </div>
             </div>
 
-            <div
-              v-else-if="success"
-              class="mb-8 p-5 bg-linear-to-r from-emerald-50 to-teal-50 border-l-4 border-emerald-500 rounded-xl animate-fade-in-up"
-            >
-              <div class="flex items-start gap-4">
-                <div
-                  class="shrink-0 w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold"
-                >
-                  ✓
-                </div>
-                <div class="flex-1">
-                  <p class="text-sm font-bold text-emerald-900 mb-1">Registro completado</p>
-                  <p class="text-sm text-emerald-700 mb-3">
-                    Tu cuenta se creó correctamente. Ya puedes acceder a TasteTracker y empezar a
-                    gestionar tu restaurante.
-                  </p>
-                  <button
-                    type="button"
-                    class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-600 text-white text-sm font-semibold shadow-sm hover:bg-emerald-700 transition-colors"
-                    @click="goToDashboard"
-                  >
-                    Ir a TasteTracker
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <form @submit.prevent="handleSubmit" class="space-y-6">
-              <!-- Nombre completo -->
+            <!-- Formulario -->
+            <form v-if="!passwordChanged" @submit.prevent="handleSubmit" class="space-y-6">
+              <!-- Nueva contraseña -->
               <div class="space-y-2">
                 <label
                   class="text-sm font-bold text-gray-700 uppercase tracking-wide flex items-center gap-2"
                 >
                   <span class="text-orange-500">●</span>
-                  Nombre completo
-                </label>
-                <div class="relative group">
-                  <div
-                    class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 group-focus-within:text-orange-500 transition-colors"
-                  >
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                      />
-                    </svg>
-                  </div>
-                  <input
-                    v-model="name"
-                    type="text"
-                    required
-                    placeholder="Ej: Juan Pérez"
-                    class="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:bg-white focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 transition-all duration-300 outline-none text-base"
-                  />
-                </div>
-              </div>
-
-              <!-- Email (debe NO existir) -->
-              <div class="space-y-2">
-                <label
-                  class="text-sm font-bold text-gray-700 uppercase tracking-wide flex items-center gap-2"
-                >
-                  <span class="text-orange-500">●</span>
-                  Correo electrónico
-                </label>
-                <div class="relative group">
-                  <div
-                    class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 group-focus-within:text-orange-500 transition-colors"
-                  >
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
-                      />
-                    </svg>
-                  </div>
-                  <input
-                    v-model="email"
-                    type="email"
-                    required
-                    placeholder="tu@email.com"
-                    class="w-full pl-12 pr-12 py-4 bg-gray-50 border-2 rounded-xl text-gray-900 placeholder-gray-400 focus:bg-white focus:ring-4 focus:ring-orange-500/10 transition-all duration-300 outline-none text-base"
-                    :class="{
-                      'border-green-500': emailStatus === 'not-found',
-                      'border-red-500': emailStatus === 'valid' || emailStatus === 'invalid',
-                      'border-gray-200': emailStatus === 'idle' || emailStatus === 'checking',
-                    }"
-                  />
-                  <div
-                    class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none"
-                  >
-                    <svg
-                      v-if="emailStatus === 'checking'"
-                      class="w-5 h-5 text-orange-500 animate-spin"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle
-                        class="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        stroke-width="4"
-                      ></circle>
-                      <path
-                        class="opacity-75"
-                        fill="currentColor"
-                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                      ></path>
-                    </svg>
-                    <svg
-                      v-else-if="emailStatus === 'not-found'"
-                      class="w-5 h-5 text-green-500"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <svg
-                      v-else-if="emailStatus === 'valid' || emailStatus === 'invalid'"
-                      class="w-5 h-5 text-red-500"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <p
-                  v-if="emailMessage"
-                  class="text-sm mt-1.5"
-                  :class="{
-                    'text-green-600': emailStatus === 'not-found',
-                    'text-red-600': emailStatus === 'valid' || emailStatus === 'invalid',
-                    'text-orange-600': emailStatus === 'checking',
-                  }"
-                >
-                  {{ emailMessage }}
-                </p>
-              </div>
-
-              <!-- Contraseña con indicador de fuerza -->
-              <div class="space-y-2">
-                <label
-                  class="text-sm font-bold text-gray-700 uppercase tracking-wide flex items-center gap-2"
-                >
-                  <span class="text-orange-500">●</span>
-                  Contraseña
+                  Nueva contraseña
                 </label>
                 <div class="relative group">
                   <div
@@ -388,6 +249,8 @@
                     </svg>
                   </button>
                 </div>
+
+                <!-- Indicador de fuerza -->
                 <div v-if="password" class="mt-3">
                   <div class="flex gap-1.5">
                     <div
@@ -454,6 +317,7 @@
                       'border-gray-200': !confirmPassword,
                     }"
                   />
+
                   <div class="absolute inset-y-0 right-0 pr-4 flex items-center gap-2">
                     <svg
                       v-if="passwordsMatch && confirmPassword"
@@ -521,6 +385,7 @@
                     </button>
                   </div>
                 </div>
+
                 <p v-if="!passwordsMatch && confirmPassword" class="text-sm text-red-600 mt-1.5">
                   Las contraseñas no coinciden
                 </p>
@@ -529,32 +394,15 @@
               <!-- Botón submit -->
               <button
                 type="submit"
-                :disabled="
-                  loading ||
-                  !name ||
-                  emailStatus !== 'not-found' ||
-                  !passwordsMatch ||
-                  passwordStrength < 2
-                "
-                @click="createRipple"
+                :disabled="loading || !passwordsMatch || passwordStrength < 2"
                 class="relative w-full py-5 px-6 bg-linear-to-r from-orange-500 via-orange-600 to-red-600 text-white font-bold text-lg rounded-xl shadow-lg shadow-orange-500/30 hover:shadow-2xl hover:shadow-orange-600/40 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-orange-500/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 transition-all duration-300 overflow-hidden group"
               >
-                <span
-                  v-for="ripple in ripples"
-                  :key="ripple.id"
-                  class="absolute bg-white/30 rounded-full animate-ripple pointer-events-none"
-                  :style="{
-                    left: ripple.x + 'px',
-                    top: ripple.y + 'px',
-                    width: ripple.size + 'px',
-                    height: ripple.size + 'px',
-                  }"
-                ></span>
                 <div
                   class="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"
                 ></div>
+
                 <span v-if="!loading" class="relative flex items-center justify-center gap-3">
-                  Crear Cuenta
+                  Restablecer contraseña
                   <svg
                     class="w-5 h-5 group-hover:translate-x-1 transition-transform"
                     fill="none"
@@ -590,32 +438,19 @@
                       d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                     ></path>
                   </svg>
-                  Creando cuenta...
+                  Actualizando...
                 </span>
               </button>
             </form>
 
-            <div class="relative my-10">
-              <div class="absolute inset-0 flex items-center">
-                <div class="w-full border-t-2 border-gray-200"></div>
-              </div>
-              <div class="relative flex justify-center">
-                <span
-                  class="px-6 bg-white text-sm font-semibold text-gray-500 uppercase tracking-wide"
-                >
-                  ¿Ya tienes cuenta?
-                </span>
-              </div>
-            </div>
-
-            <router-link
-              to="/login"
-              class="block w-full py-4 px-6 border-2 border-gray-200 text-gray-700 font-bold text-center rounded-xl hover:border-orange-500 hover:text-orange-600 hover:bg-orange-50 transition-all duration-300 group"
-            >
-              <span class="flex items-center justify-center gap-2">
-                Iniciar Sesión
+            <!-- Link back to login -->
+            <div class="mt-8">
+              <router-link
+                to="/login"
+                class="flex items-center justify-center gap-2 text-sm font-bold text-gray-600 hover:text-orange-600 transition-colors group"
+              >
                 <svg
-                  class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                  class="w-5 h-5 group-hover:-translate-x-1 transition-transform"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -624,38 +459,54 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18"
                   />
                 </svg>
-              </span>
-            </router-link>
+                Volver al inicio de sesión
+              </router-link>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Footer -->
+      <footer class="w-full px-4 sm:px-8 lg:px-12 pb-6 pt-6 text-xs text-gray-400">
+        <p>&copy; {{ new Date().getFullYear() }} TasteTracker. Todos los derechos reservados.</p>
+      </footer>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import { useRouter } from 'vue-router'
-import { useAuth } from '@/composables/useAuth'
-import { useEmailValidation } from '@/composables/useEmailValidation'
+import { ref, computed, onMounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import { authAPI } from '@/services/api'
 
+const route = useRoute()
 const router = useRouter()
-const { register, loading, error, clearError } = useAuth()
 
-const success = ref(false)
-
-const name = ref('')
+const token = ref('')
+const email = ref('')
 const password = ref('')
 const confirmPassword = ref('')
 const showPassword = ref(false)
 const showConfirmPassword = ref(false)
+const loading = ref(false)
+const error = ref<string | null>(null)
+const passwordChanged = ref(false)
 
-const { email, emailStatus, emailMessage } = useEmailValidation()
+onMounted(() => {
+  token.value = (route.query.token as string) || ''
+  email.value = (route.query.email as string) || ''
 
-const ripples = ref<Array<{ id: number; x: number; y: number; size: number }>>([])
+  if (!token.value || !email.value) {
+    error.value = 'Enlace inválido o expirado'
+  }
+})
+
+const clearError = () => {
+  error.value = null
+}
 
 const passwordsMatch = computed(() => {
   if (!confirmPassword.value) return false
@@ -685,27 +536,7 @@ const passwordStrengthText = computed(() => {
   return 'Contraseña fuerte'
 })
 
-const createRipple = (event: MouseEvent) => {
-  const button = event.currentTarget as HTMLButtonElement
-  const rect = button.getBoundingClientRect()
-  const size = Math.max(rect.width, rect.height) * 2
-  const x = event.clientX - rect.left - size / 2
-  const y = event.clientY - rect.top - size / 2
-
-  const id = Date.now()
-  ripples.value.push({ id, x, y, size })
-
-  setTimeout(() => {
-    ripples.value = ripples.value.filter((r) => r.id !== id)
-  }, 600)
-}
-
 const handleSubmit = async () => {
-  if (emailStatus.value !== 'not-found') {
-    error.value = 'Por favor usa un email disponible'
-    return
-  }
-
   if (!passwordsMatch.value) {
     error.value = 'Las contraseñas no coinciden'
     return
@@ -716,23 +547,31 @@ const handleSubmit = async () => {
     return
   }
 
-  clearError()
-  success.value = false
-
-  await register({
-    name: name.value,
-    email: email.value,
-    password: password.value,
-    password_confirmation: confirmPassword.value,
-  })
-
-  if (!error.value) {
-    success.value = true
+  if (!token.value || !email.value) {
+    error.value = 'Enlace inválido o expirado'
+    return
   }
-}
 
-const goToDashboard = () => {
-  router.push('/dashboard')
+  loading.value = true
+  error.value = null
+
+  try {
+    await authAPI.resetPassword({
+      token: token.value,
+      email: email.value,
+      password: password.value,
+      password_confirmation: confirmPassword.value,
+    })
+    passwordChanged.value = true
+
+    setTimeout(() => {
+      router.push('/login')
+    }, 3000)
+  } catch (err: any) {
+    error.value = err.response?.data?.message || 'Error al restablecer la contraseña'
+  } finally {
+    loading.value = false
+  }
 }
 </script>
 
@@ -768,13 +607,6 @@ const goToDashboard = () => {
   }
 }
 
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
-
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
   opacity: 0;
@@ -782,9 +614,5 @@ const goToDashboard = () => {
 
 .animate-shake {
   animation: shake 0.5s ease-in-out;
-}
-
-.animate-ripple {
-  animation: ripple 0.6s ease-out;
 }
 </style>
